@@ -8,10 +8,10 @@ from deap import tools
 
 # https://www.geeksforgeeks.org/0-1-knapsack-problem-dp-10/
 # Solution 220
-# NBR_ITEMS = 3
-# MAX_WEIGHT = 50
-# values = np.array([60, 100, 120])
-# weights = np.array([10, 20, 30])
+NBR_ITEMS = 3
+MAX_WEIGHT = 50
+values = np.array([60, 100, 120])
+weights = np.array([10, 20, 30])
 
 # NBR_ITEMS = 5
 # MAX_WEIGHT = 70
@@ -41,6 +41,7 @@ def fitness(individual):
         return (sum(values * np.array(individual)),)
 
 
+# https://deap.readthedocs.io/en/master/api/tools.html
 toolbox.register('evaluate', fitness)
 toolbox.register('select', tools.selRoulette)
 toolbox.register('mate', tools.cxUniform, indpb=1/NBR_ITEMS)
